@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formualaire de commande </title>
+    <!-- feuille de style externe -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div id="site-content">
+        <h1>Formulaire de commande</h1>
+        <!-- Données envoyées au serveur en post -->
+        <form method="POST" action="#">
+            <!-- permet de découper un formulaire en section -->
+            <fieldset id="identity">
+                <legend>Votre identité</legend>
+                <div class="input-group">
+                    <label for="lastname">Nom</label>
+                    <input id="lastname" name="lastname" required type="text" placeholder="Dupont" />
+                </div>
+                <div class="input-group">
+                    <label for="firstname">Prénom</label>
+                    <input id="firstname" name="firstname" required type="text" placeholder="Jean" />
+                </div>
+                <div class="input-group">
+                    <label for="email">Adresse mail</label>
+                    <input id="email" name="email" required type="email" placeholder="exemple@mail.com" />
+                </div>
+            </fieldset>
+            <fieldset id="delivery">
+                <legend>Adresse livraison</legend>
+                <div class="input-group">
+                    <label for="address">Adresse postale</label>
+                    <textarea name="address" id="address" cols="30" rows="2" placeholder="15 rue du maréchal juin"></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="zipCode">Code postal</label>
+                    <input id="zipCode" name="zipCode" type="text" placeholder="75000" />
+                </div>
+                <div class="input-group">
+                    <label for="city">Ville</label>
+                    <input id="city" name="city" type="text" placeholder="Paris" />
+                </div>
+            </fieldset>
+            <fieldset id="payment">
+                <legend>Information de réglement</legend>
+                <div>
+                    <p>Type de carte</p>
+                    <label for="visa">
+                        <input type="radio" name="cardType" id="visa" value="visa" />
+                        Visa
+                    </label>
+                    <label for="mastercard">
+                        <input type="radio" name="cardType" id="mastercard" value="mastercard" />
+                        Mastercard
+                    </label>
+                </div>
+
+                <div class="input-group">
+                    <label for="cardNumber">Numéro de carte</label>
+                    <input id="cardNumber" name="cardNumber" type="text" placeholder="5440507200250012" required
+                        minlength="16" maxlength="16" />
+                </div>
+                <div class="input-group">
+                    <label for="cryptogram">Code de sécurité</label>
+                    <input id="cryptogram" name="cryptogram" type="text" placeholder="450" required minlength="3"
+                        maxlength="3" />
+                </div>
+                <div class="input-group">
+                    <label for="owner">Nom du titulaire</label>
+                    <input id="owner" name="owner" type="text" placeholder="450" required minlength="3"
+                        maxlength="3" />
+                </div>
+            </fieldset>
+            <div>
+                <button type="submit">J'achète</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

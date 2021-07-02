@@ -1,0 +1,85 @@
+/* réinitialiser le style de page */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+/* réduire et centrer le contenu du site */
+
+#site-content {
+    width: 70%;
+    /* pour centrer */
+    margin: auto;
+    /* margin en haut de page pour décoller du bord supérieur */
+
+    margin-top: 2rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+fieldset {
+    padding: 3rem 2rem;
+}
+/* 3rem =haut et bas et 2=gauche et droite */
+
+#identity, #identity > legend {
+    background-color: rgb(37, 116, 169);
+}
+
+#delivery, #delivery > legend {
+    background-color: rgb(154, 18, 179);
+
+}
+/* #delivery > legend : enfant directe legende du parent delivery */
+
+#payment, #payment > legend {
+    background-color: rgb(219, 10, 91);
+}
+
+.input-group {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.input-group > input, .input-group > textarea {
+    width: 70%;
+}
+
+#payment > div > label {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+#payment p {
+    margin-bottom: 1rem;
+}
+
+textarea {
+    resize: none;
+}
+/* Block le resize du taille de chatbox */
+
+/* bonus */
+
+fieldset {
+    counter-reset: child;
+}
+/* Pour chaque fieldset remettrre le compteur a 0 */
+
+fieldset > div :first-child::before {
+    counter-increment: child;
+    content: counter(child) ". ";
+}
+/* content permet d'afficher l'incrémentation */
+/* le ". " permet de rajouter le . et l'espace dans l'incrémentation */
